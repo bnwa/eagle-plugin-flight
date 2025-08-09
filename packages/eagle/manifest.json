@@ -1,0 +1,13 @@
+{
+  "id": "FLIGHT_PLUGIN_001",
+  "version": "1.0.0",
+  "name": "Flight Plugin",
+  "logo": "/logo.png",
+  "keywords": ["flight", "plugin"],
+  "main": {
+    "devTools": true,
+    "url": "index.html",
+    "width": 800,
+    "height": 600
+  }
+}

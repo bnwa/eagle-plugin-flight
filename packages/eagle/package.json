@@ -1,0 +1,6 @@
+{
+  "name": "@flight/eagle",
+  "version": "1.0.0",
+  "description": "Eagle plugin package",
+  "private": true
+}

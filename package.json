@@ -1,0 +1,27 @@
+{
+  "name": "@flight/monorepo",
+  "version": "1.0.0",
+  "description": "Monorepo for Eagle plugin and web frontend",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "bun run build.esbuild.js",
+    "build:mock": "bun run build.esbuild.js --mock",
+    "dev": "bun run build.esbuild.js --watch",
+    "dev:mock": "bun run build.esbuild.js --watch --mock",
+    "serve": "bun run dev-server.js",
+    "start": "bun run build && bun run serve",
+    "start:mock": "bun run build:mock && bun run serve",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  }
+}

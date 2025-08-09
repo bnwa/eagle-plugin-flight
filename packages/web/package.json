@@ -1,0 +1,16 @@
+{
+  "name": "@flight/web",
+  "version": "1.0.0",
+  "description": "TypeScript web frontend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "echo 'Development server not configured yet'",
+    "build": "echo 'Build script handled by monorepo root'",
+    "test": "echo 'Test script not configured yet'"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

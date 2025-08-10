@@ -63,7 +63,7 @@ async function buildProject() {
         // Create mock client directory with simple files
         console.log('🎭 Creating mock web frontend...');
         
-        const clientDir = 'dist/client';
+        const clientDir = 'dist/js/client'; // Changed from 'dist/client' to 'dist/js/client'
         if (!existsSync(clientDir)) {
             mkdirSync(clientDir, { recursive: true });
         }
@@ -97,6 +97,7 @@ async function buildProject() {
         <p>This is a mock implementation for testing the Eagle plugin independently.</p>
         <p>✅ Mock frontend loaded successfully</p>
         <p>🌐 Served via Eagle plugin HTTP server</p>
+        <p>📁 Located at: js/client/ (Eagle-compatible path)</p>
     </div>
     <script src="main.js"></script>
 </body>
@@ -114,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (container) {
         const statusDiv = document.createElement('div');
         statusDiv.style.cssText = 'margin-top: 20px; padding: 15px; background: #e8f5e8; border-radius: 4px;';
-        statusDiv.innerHTML = '<h3>Mock Status</h3><p>🟢 Mock server running</p><p>🟢 Mock frontend active</p>';
+        statusDiv.innerHTML = '<h3>Mock Status</h3><p>🟢 Mock server running</p><p>🟢 Mock frontend active</p><p>📍 Client path: js/client/</p>';
         container.appendChild(statusDiv);
     }
 });`;
@@ -144,8 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         // Copy web frontend dist to client directory
-        console.log('📋 Copying web frontend to client directory...');
-        const clientDir = 'dist/client';
+        console.log('📋 Copying web frontend to js/client directory...');
+        const clientDir = 'dist/js/client'; // Changed from 'dist/client' to 'dist/js/client'
         const webDistDir = 'packages/web/dist';
         
         if (existsSync(webDistDir)) {

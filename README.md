@@ -30,12 +30,12 @@ flight/
 │       ├── package.json
 │       └── tsconfig.json
 ├── dist/                   # Build output (Eagle plugin structure)
-│   ├── client/             # Web frontend SPA files
-│   │   ├── index.html      # Web frontend HTML
-│   │   └── main.js         # Web frontend JavaScript
 │   ├── index.html          # Eagle plugin UI
 │   ├── js/
-│   │   └── plugin.js       # Eagle plugin + HTTP server
+│   │   ├── plugin.js       # Eagle plugin + HTTP server
+│   │   └── client/         # Web frontend SPA files (Eagle-compatible path)
+│   │       ├── index.html  # Web frontend HTML
+│   │       └── main.js     # Web frontend JavaScript
 │   ├── logo.png
 │   ├── manifest.json
 │   └── package.json
@@ -100,7 +100,7 @@ npm run serve
 
 1. **Eagle Plugin (`plugin.js`)**:
    - Starts a Node.js HTTP server on port 8080 (with fallback if occupied)
-   - Serves the web frontend SPA from the `client/` directory
+   - Serves the web frontend SPA from the `js/client/` directory (Eagle-compatible path)
    - Logs the server URL to console
    - Handles Eagle plugin lifecycle events
 
@@ -111,7 +111,7 @@ npm run serve
    - Accessible at `http://localhost:8080` (or fallback port)
 
 3. **Build Process**:
-   - **Production mode**: Builds real TypeScript web frontend to SPA, copies to `client/`
+   - **Production mode**: Builds real TypeScript web frontend to SPA, copies to `js/client/`
    - **Mock mode**: Creates simple mock SPA files for Eagle plugin testing
 
 #### Build Modes
@@ -119,12 +119,12 @@ npm run serve
 ##### Production Mode (`npm run build`)
 1. Copies Eagle plugin structure to `dist/`
 2. Builds web frontend TypeScript to SPA in `packages/web/dist/`
-3. Copies web frontend SPA to `dist/client/`
+3. Copies web frontend SPA to `dist/js/client/` (Eagle-compatible path)
 4. Creates complete Eagle plugin with HTTP server
 
 ##### Mock Mode (`npm run build:mock`)
 1. Copies Eagle plugin structure to `dist/`
-2. Creates mock SPA files in `dist/client/`
+2. Creates mock SPA files in `dist/js/client/`
 3. Allows Eagle plugin testing without web package dependencies
 
 ### Eagle Plugin Development
@@ -134,7 +134,7 @@ The built plugin in `dist/` can be loaded directly into Eagle:
 1. **Plugin UI** (`index.html`): Shows plugin status and web frontend URL
 2. **HTTP Server** (`js/plugin.js`): Serves web frontend SPA on localhost
 3. **Web Frontend**: Accessible via HTTP at the logged URL
-4. **Client Directory**: Contains the complete web frontend SPA
+4. **Client Directory**: Located at `js/client/` for Eagle file access compatibility
 
 ### Web Frontend Development
 
@@ -173,10 +173,18 @@ The Eagle plugin starts an HTTP server that:
 
 - **Default Port**: 8080 (with automatic fallback if occupied)
 - **Binding**: localhost (127.0.0.1) for security
-- **Serves**: Static files from `client/` directory
+- **Serves**: Static files from `js/client/` directory (Eagle-compatible path)
 - **Security**: Path traversal protection
 - **CORS**: Enabled for development
 - **Logging**: Server URL logged to console
+
+### Eagle File Access Compatibility
+
+The web frontend files are placed in `dist/js/client/` because:
+
+- Eagle plugins have restricted file access permissions
+- Files must be located beneath the `js/` directory to be readable
+- The `client/` directory is now peer to `plugin.js` for proper access
 
 ### Development Server
 

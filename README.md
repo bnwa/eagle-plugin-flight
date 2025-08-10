@@ -1,6 +1,7 @@
-# Flight Monorepo
+# Flight
 
-A Bun.js monorepo containing an Eagle plugin and web frontend with support for independent testing.
+Eagle plugin for supporting HTTP sharing of Eagle libraries over
+a local network
 
 ## Structure
 

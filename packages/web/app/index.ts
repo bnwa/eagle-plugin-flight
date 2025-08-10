@@ -1,5 +1,5 @@
 // Main entry point for the web frontend
-// This will be built and bundled to js/main.js in the Eagle plugin
+// This will be built and bundled to main.js in the web package dist
 
 console.log('Web frontend initializing...');
 
@@ -20,10 +20,13 @@ class FlightApp {
         const appElement = document.getElementById('app');
         if (appElement) {
             appElement.innerHTML = `
-                <h1>Flight Plugin</h1>
+                <h1>Flight Web Frontend</h1>
                 <p>Web frontend loaded successfully!</p>
                 <div id="content">
-                    <!-- Content will be dynamically loaded here -->
+                    <h3>Status</h3>
+                    <p>✅ Frontend is running</p>
+                    <p>✅ Served via Eagle plugin HTTP server</p>
+                    <p>✅ Ready for development</p>
                 </div>
             `;
         }

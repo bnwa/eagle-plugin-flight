@@ -16,7 +16,7 @@
     "lib": ["DOM", "DOM.Iterable", "ES2021"]
   },
   "include": [
-    "packages/*/src/**/*"
+    "packages/*/app/**/*"
   ],
   "exclude": [
     "node_modules",

@@ -14,9 +14,9 @@
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "dist",
-    "rootDir": "src",
+    "rootDir": "app",
     "lib": ["DOM", "DOM.Iterable", "ES2021"]
   },
-  "include": ["src/**/*"],
+  "include": ["app/**/*"],
   "exclude": ["node_modules", "dist"]
 }

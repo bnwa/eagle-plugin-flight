@@ -1,8 +1,0 @@
-[install]
-# Configure package manager behavior
-cache = true
-exact = false
-production = false
-
-[install.scopes]
-# Scoped package configuration if needed

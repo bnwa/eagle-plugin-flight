@@ -1,6 +1,6 @@
 import { build } from 'esbuild';
-import { copyFileSync, mkdirSync, existsSync, readdirSync, statSync } from 'fs';
-import { join, dirname } from 'path';
+import { copyFileSync, mkdirSync, existsSync, readdirSync } from 'fs';
+import { join } from 'path';
 
 const isWatch = process.argv.includes('--watch');
 const isMock = process.argv.includes('--mock');
@@ -52,7 +52,7 @@ async function buildProject() {
             bundle: true,
             outfile: 'dist/js/main.js',
             format: 'iife',
-            target: 'es2020',
+            target: 'es2021', // Compatible with Node v16
             minify: !isWatch,
             sourcemap: isWatch,
             platform: 'browser',

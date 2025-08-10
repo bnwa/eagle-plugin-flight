@@ -10,7 +10,10 @@
     "test": "echo 'Test script not configured yet'"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0",
+    "@types/node": "^16.18.0",
     "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }

@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "ES2021",
     "module": "ESNext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "noEmit": true,
     "strict": true,
@@ -15,7 +15,7 @@
     "sourceMap": true,
     "outDir": "dist",
     "rootDir": "src",
-    "lib": ["DOM", "DOM.Iterable", "ES2022"]
+    "lib": ["DOM", "DOM.Iterable", "ES2021"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]

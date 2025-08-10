@@ -8,20 +8,21 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "bun run build.esbuild.js",
-    "build:mock": "bun run build.esbuild.js --mock",
-    "dev": "bun run build.esbuild.js --watch",
-    "dev:mock": "bun run build.esbuild.js --watch --mock",
-    "serve": "bun run dev-server.js",
-    "start": "bun run build && bun run serve",
-    "start:mock": "bun run build:mock && bun run serve",
+    "build": "node build.esbuild.js",
+    "build:mock": "node build.esbuild.js --mock",
+    "dev": "node build.esbuild.js --watch",
+    "dev:mock": "node build.esbuild.js --watch --mock",
+    "serve": "node dev-server.js",
+    "start": "npm run build && npm run serve",
+    "start:mock": "npm run build:mock && npm run serve",
     "clean": "rm -rf dist"
   },
   "devDependencies": {
-    "esbuild": "^0.19.0",
+    "esbuild": "^0.19.12",
     "typescript": "^5.0.0"
   },
   "engines": {
-    "bun": ">=1.0.0"
+    "node": "16.x",
+    "npm": ">=7.0.0"
   }
 }
